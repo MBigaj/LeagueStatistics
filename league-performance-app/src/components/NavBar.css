@@ -1,0 +1,13 @@
+.navbar-tile {
+  background: rgb(134, 134, 134);
+  box-shadow: 0px 2px 5px rgb(63, 63, 63);
+}
+
+.search-bar {
+  border: solid rgb(63, 63, 63) 1px !important;
+}
+
+.statistics-button {
+  border: solid rgb(63, 63, 63) 1px !important;
+  width: 10%;
+}

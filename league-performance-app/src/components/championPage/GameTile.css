@@ -1,0 +1,30 @@
+.game-box {
+    height: 100px;
+    background: rgb(196, 196, 196);
+    font-size: 28px;
+    font-family: bebas neue, sans-serif;
+}
+
+.game-box.first {
+    border-radius: 10px 0 0 10px;
+}
+
+.game-box.last {
+    border-radius: 0 10px 10px 0;
+}
+
+.game-won {
+    background: greenyellow;
+}
+
+.game-lost {
+    background: rgb(255, 0, 0);
+}
+
+.game-lost-gradient {
+    background-image: linear-gradient(to right, red, rgb(196, 196, 196));
+}
+
+.game-won-gradient {
+    background-image: linear-gradient(to right, greenyellow, rgb(196, 196, 196));
+}

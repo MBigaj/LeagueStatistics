@@ -1,0 +1,61 @@
+.champion-image {
+    width: 90%;
+    border-radius: 30px 0 0 30px;
+    transition: all 250ms;
+}
+
+.champion-image:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 42%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-family: bebas neue, sans-serif;
+    font-size: 80px;
+    color: white;
+    opacity: 0.4;
+}
+
+.image-text {
+    text-shadow:
+		-2px -2px 0 #000,
+		2px -2px 0 #000,
+		-2px 2px 0 #000,
+		2px 2px 0 #000;
+}
+
+.breakpoint {
+    color: white;
+    border: 1.5px solid;
+    border-radius: 10px;
+}
+
+.total-stats-box {
+    height: auto;
+    background: rgb(196, 196, 196);
+    font-size: 28px;
+    font-family: bebas neue, sans-serif;   
+}
+
+.total-stats-box.kills-box {
+    border-radius: 0 10px 0 0;
+    background-image: linear-gradient(to bottom, rgb(118, 212, 255), rgb(196, 196, 196));
+}
+
+.total-stats-box.deaths-box {
+    background-image: linear-gradient(to bottom, rgb(146, 0, 0), rgb(196, 196, 196));
+}
+
+.total-stats-box.assists-box {
+    background-image: linear-gradient(to bottom, rgb(170, 128, 14), rgb(196, 196, 196));
+}
+
+.total-stats-box.kda-box {
+    border-radius: 0 0 10px 0;
+    background-image: linear-gradient(to bottom, rgb(176, 142, 255), rgb(196, 196, 196));
+}

@@ -1,0 +1,74 @@
+.champion-tile-played {
+    background: rgb(77, 173, 77) !important;
+}
+
+.shadow-border {
+    background: rgb(141, 141, 141);
+    transition: 0.6s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
+}
+
+.shadow-border:hover {
+    background: rgb(212, 212, 212);
+}
+
+.image-container {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.header-text {
+    font-family: bebas neue, sans-serif;
+}
+
+.image-container:hover {
+    transition: all 250ms;
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+.new-game-button {
+    align-items: center;
+    background-color: #a7a7a7;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+}
+  
+.new-game-button.game-button:hover, .new-game-button.game-button:focus {
+    background-color: rgb(168, 162, 230);
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.new-game-button.already-played:hover, .new-game-button.already-played:focus {
+    background-color: rgb(124, 255, 152);
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.new-game-button:hover {
+    transform: translateY(-1px);
+}

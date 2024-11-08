@@ -1,0 +1,28 @@
+.statistic-champion-image-container {
+  transition: 0.4s;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.statistic-champion-image-container:hover {
+  transform: scale(1.05);
+}
+
+img {
+  width: 220px;
+}
+
+.statistic-game-box {
+  height: 100px;
+  background: rgb(196, 196, 196);
+  font-size: 28px;
+  font-family: bebas neue, sans-serif;
+}
+
+.statistic-game-box.first {
+  border-radius: 10px 0 0 10px;
+}
+
+.statistic-game-box.last {
+  border-radius: 0 10px 10px 0;
+}

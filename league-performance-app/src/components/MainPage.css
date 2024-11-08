@@ -1,0 +1,5 @@
+.champion-container {
+    height: auto;
+    width: 280px;
+    transition: 0.5s;
+}

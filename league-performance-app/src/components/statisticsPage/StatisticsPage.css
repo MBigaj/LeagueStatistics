@@ -1,0 +1,11 @@
+.statistics-selectors {
+  gap: 15px;
+}
+
+.sort-field {
+  width: 8vw !important;
+}
+
+.selected-filter-button {
+  background-color: aqua !important;
+}
