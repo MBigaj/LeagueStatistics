@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import MainPage from './components/MainPage';
 import ChampionPage from './components/championPage/ChampionPage';
 import { useEffect, useState } from 'react';
@@ -28,6 +28,7 @@ function App() {
     <BrowserRouter>
       <NavBar championSearchString={championSearchString} setChampionSearchString={setChampionSearchString} currentPage={currentPage} />
       <Routes>
+        <Route path="/" element={<Navigate to="/champions" />} />
         <Route path="/champions" element={ <MainPage champions={ champions } championSearchString={championSearchString} setCurrentPage={setCurrentPage} /> } />
         <Route path="/champion/:championId" element={ <ChampionPage setCurrentPage={setCurrentPage} /> } />
         <Route path="/statistics" element={ <StatisticsPage champions={champions} setCurrentPage={setCurrentPage} /> } />
