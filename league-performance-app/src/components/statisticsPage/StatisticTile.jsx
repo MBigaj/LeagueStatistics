@@ -19,7 +19,7 @@ const StatisticTile = ({ filteredChampion, filterName }) => {
       <div className='col-md-2 statistic-game-box last my-2 mx-1 d-flex justify-content-center align-items-center'>
         <div>
           <div>{ filterName }</div>
-          <div>{ filterName === 'K/DA' ? filteredChampion.statistic.toFixed(2) : filteredChampion.statistic }</div>
+          <div>{ filterName === 'K/DA' ? parseFloat(filteredChampion.statistic).toFixed(2) : filteredChampion.statistic }</div>
         </div>
       </div>
     </div>
