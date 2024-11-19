@@ -4,6 +4,8 @@ import { useNavigate, useParams } from "react-router"
 import GameTile from "./GameTile"
 import './ChampionPage.css'
 import Pages from "../../Pages"
+import URLS from "../../urls"
+import ChampionBuildModal from "../modals/ChampionBuildModal"
 
 const ChampionPage = ({ setCurrentPage }) => {
     const navigate = useNavigate()
@@ -14,9 +16,10 @@ const ChampionPage = ({ setCurrentPage }) => {
 
     const [champion, setChampion] = useState(null)
     const [games, setGames] = useState(null)
+    const [builds, setBuilds] = useState(null)
 
     useEffect(() => {
-        axios.get(`http://localhost:3001/champions/get-one/${championId}`, {
+        axios.get(`${URLS.BACKEND_URL}champions/get-one/${championId}`, {
             headers: {
                 'Content-Type': 'application/json',
                 },
@@ -24,7 +27,7 @@ const ChampionPage = ({ setCurrentPage }) => {
                 setChampion(response.data[0])
             })
 
-        axios.get(`http://localhost:3001/games/get/${championId}`, {
+        axios.get(`${URLS.BACKEND_URL}games/get/${championId}`, {
             headers: {
                 'Content-Type': 'application/json',
                 },
@@ -32,6 +35,24 @@ const ChampionPage = ({ setCurrentPage }) => {
                 setGames(response.data)
             })
     }, [])
+
+    useEffect(() => {
+        if (champion) {
+            fetchBuildForChampion()
+        }
+    }, [champion])
+
+    const fetchBuildForChampion = () => {
+        if (!builds) {
+            axios.get(`${URLS.FLASK_URL}champion/${champion.name}`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    },
+                }).then(response => {
+                    setBuilds(response.data)
+                })
+        }
+    }
 
     function handleBackToHome() {
         navigate(`/${Pages.PAGE_CHAMPIONS}`)
@@ -102,6 +123,7 @@ const ChampionPage = ({ setCurrentPage }) => {
                             <div>{ games && getTotalOfStat('kda') }</div>
                         </div>
                     </div>
+                    <ChampionBuildModal buttonText={ 'SHOW BUILDS' } buttonStyling={ 'btn btn-primary w-50' } builds={ builds } onClick={ fetchBuildForChampion } />
                 </div> }
             <hr className="breakpoint"></hr>
             { games && games.map(game => {

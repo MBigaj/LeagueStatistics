@@ -7,6 +7,7 @@ import axios from "axios";
 import NewGameModal from "./modals/NewGameModal";
 import { useNavigate } from "react-router-dom";
 import CompletedCharacterModal from "./modals/CompletedCharacterModal";
+import URLS from "../urls";
 
 const ChampionTile = ({ champion }) => {
     const navigate = useNavigate()
@@ -29,7 +30,7 @@ const ChampionTile = ({ champion }) => {
 
     function handleAlreadyPlayed(alreadyPlayed) {
         axios.post(
-            'http://localhost:3001/champions/update-already-played/',
+            `${URLS.BACKEND_URL}champions/update-already-played/`,
             { 
                 id: champion.id,
                 alreadyPlayed: alreadyPlayed

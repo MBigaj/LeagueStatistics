@@ -3,6 +3,7 @@ import Pages from "../../Pages"
 import './StatisticsPage.css'
 import axios from "axios"
 import StatisticTile from "./StatisticTile"
+import URLS from "../../urls"
 
 const StatisticsPage = ({ setCurrentPage }) => {
   setCurrentPage(Pages.PAGE_STATISTICS)
@@ -44,7 +45,7 @@ const StatisticsPage = ({ setCurrentPage }) => {
   useEffect(() => {
     if (activeFilter && sortMethod) {
       console.log(activeFilter)
-      axios.get('http://localhost:3001/champions/get-statistics/', {
+      axios.get(`${URLS.BACKEND_URL}champions/get-statistics/`, {
         params: {
           filter: activeFilter,
           order: sortMethod,

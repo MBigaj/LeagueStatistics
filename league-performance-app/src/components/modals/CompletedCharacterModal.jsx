@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import './CompletedCharacterModal.css'
 import axios from 'axios';
+import URLS from '../../urls';
 
 function CompletedCharacterModal({ buttonText, buttonStyling, champion, onClickCallback }) {
   const [show, setShow] = useState(false);
@@ -19,7 +20,7 @@ function CompletedCharacterModal({ buttonText, buttonStyling, champion, onClickC
     }
 
     axios.post(
-        'http://localhost:3001/champions/set-fun-factor/',
+        `${URLS.BACKEND_URL}champions/set-fun-factor/`,
         payload,
         {
             withCredentials: true,

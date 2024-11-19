@@ -7,6 +7,7 @@ import axios from 'axios';
 import NavBar from './components/NavBar';
 import StatisticsPage from './components/statisticsPage/StatisticsPage';
 import Pages from './Pages'
+import URLS from './urls';
 
 function App() {
   const [champions, setChampions] = useState(null)
@@ -15,13 +16,13 @@ function App() {
   const [currentPage, setCurrentPage] = useState(Pages.PAGE_CHAMPIONS)
 
   useEffect(() => {
-      axios.get('http://localhost:3001/champions/get/', {
-          headers: {
-          'Content-Type': 'application/json',
-          },
-      }).then(response => {
-          setChampions(response.data)
-      })
+    axios.get(`${URLS.BACKEND_URL}champions/get/`, {
+      headers: {
+      'Content-Type': 'application/json',
+      },
+    }).then(response => {
+      setChampions(response.data)
+    })
   }, [])
 
   return (

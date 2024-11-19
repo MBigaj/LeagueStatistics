@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import './NewGameModal.css'
 import axios from 'axios';
+import URLS from '../../urls';
 
 function NewGameModal({ buttonText, buttonStyling, champion }) {
   const [show, setShow] = useState(false);
@@ -32,7 +33,7 @@ function NewGameModal({ buttonText, buttonStyling, champion }) {
     }
 
     axios.post(
-        'http://localhost:3001/games/new/',
+        `${URLS.BACKEND_URL}games/new/`,
         payload,
         {
             withCredentials: true,
