@@ -43,8 +43,10 @@ const ChampionPage = ({ setCurrentPage }) => {
     }, [champion])
 
     const fetchBuildForChampion = () => {
+        const championName = champion.name.replace("'", '')
+
         if (!builds) {
-            axios.get(`${URLS.FLASK_URL}champion/${champion.name}`, {
+            axios.get(`${URLS.FLASK_URL}champion/${championName}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     },
