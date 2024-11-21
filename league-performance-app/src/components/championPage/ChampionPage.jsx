@@ -101,7 +101,7 @@ const ChampionPage = ({ setCurrentPage }) => {
         <div className="container">
             { champion && 
                 <div className="d-flex justify-content-center row position-relative">
-                    <div className="my-4 col-md-6 d-flex justify-content-center">
+                    <div className="my-4 col-md-6 d-flex justify-content-start">
                         <img src={ champion.image_url } className="champion-image" onClick={ handleBackToHome } alt='hello' />
                         <div className="caption d-flex text-center justify-content-center w-auto">
                             <p className="image-text">{ champion.name }</p>
@@ -125,7 +125,9 @@ const ChampionPage = ({ setCurrentPage }) => {
                             <div>{ games && getTotalOfStat('kda') }</div>
                         </div>
                     </div>
-                    <ChampionBuildModal buttonText={ 'SHOW BUILDS' } buttonStyling={ 'btn btn-primary w-50' } builds={ builds } onClick={ fetchBuildForChampion } />
+                    <div className='col-md-8'>
+                        <ChampionBuildModal buttonText={ 'SHOW BUILDS' } buttonStyling={ 'btn btn-danger w-100' } builds={ builds } onClick={ fetchBuildForChampion } />
+                    </div>
                 </div> }
             <hr className="breakpoint"></hr>
             { games && games.map(game => {

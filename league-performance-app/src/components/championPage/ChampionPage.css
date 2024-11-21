@@ -12,7 +12,7 @@
 .caption {
     position: absolute;
     top: 50%;
-    left: 42%;
+    left: 40%;
     transform: translate(-50%, -50%);
     width: 100%;
     font-family: bebas neue, sans-serif;
@@ -58,8 +58,4 @@
 .total-stats-box.kda-box {
     border-radius: 0 0 10px 0;
     background-image: linear-gradient(to bottom, rgb(176, 142, 255), rgb(196, 196, 196));
-}
-
-.item-image {
-    width: 60px;
 }

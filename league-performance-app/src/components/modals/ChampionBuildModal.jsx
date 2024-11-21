@@ -15,15 +15,57 @@ function ChampionBuildModal({ buttonText, buttonStyling, builds }) {
     }
   }, [builds])
 
+  const renderPlaceholder = (imageCount) => {
+    return (
+      <div>
+        <div className='d-flex'>
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        </div>
+        <hr></hr>
+        <div className='d-flex'>
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        </div>
+        <hr></hr>
+        <div className='d-flex'>
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        </div>
+        <hr></hr>
+        <div className='d-flex'>
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        </div>
+        <hr></hr>
+        <div className='d-flex'>
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        </div>
+        <hr></hr>
+        <div className='d-flex'>
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        </div>
+        <hr></hr>
+        <div className='d-flex'>
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        </div>
+      </div>
+    )
+  }
+
   const renderContent = () => {
     if (isLoading) {
-        return (
-            <div className='d-flex justify-content-center '>
-                <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        )
+      return renderPlaceholder()
     }
 
     return (
