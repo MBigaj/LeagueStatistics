@@ -5,7 +5,7 @@ import './CompletedCharacterModal.css'
 import axios from 'axios';
 import URLS from '../../urls';
 
-function CompletedCharacterModal({ buttonText, buttonStyling, champion, onClickCallback }) {
+function CompletedCharacterModal({ buttonText, buttonStyling, champion, onClickCallback = null }) {
   const [show, setShow] = useState(false);
 
   const [funFactor, setFunFactor] = useState(0)
@@ -26,8 +26,10 @@ function CompletedCharacterModal({ buttonText, buttonStyling, champion, onClickC
             withCredentials: true,
             headers: { 'Content-Type': 'application/json' }
         }
-    ).then(response => {
-      onClickCallback()
+    ).then(() => {
+      if (onClickCallback) {
+        onClickCallback()
+      }
     })
 
     handleClose()

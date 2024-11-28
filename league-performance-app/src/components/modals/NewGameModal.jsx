@@ -5,7 +5,7 @@ import './NewGameModal.css'
 import axios from 'axios';
 import URLS from '../../urls';
 
-function NewGameModal({ buttonText, buttonStyling, champion }) {
+function NewGameModal({ buttonText, buttonStyling, champion, onClickCallback = null }) {
   const [show, setShow] = useState(false);
   
   const [gameStatus, setGameStatus] = useState('win')
@@ -39,7 +39,11 @@ function NewGameModal({ buttonText, buttonStyling, champion }) {
             withCredentials: true,
             headers: { 'Content-Type': 'application/json' }
         }
-    )
+    ).then(() => {
+      if (onClickCallback) {
+        onClickCallback()
+      }
+    })
 
     handleClose()
   }

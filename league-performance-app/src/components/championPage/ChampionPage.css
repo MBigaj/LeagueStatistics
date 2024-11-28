@@ -11,7 +11,7 @@
 
 .caption {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 40%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -58,4 +58,15 @@
 .total-stats-box.kda-box {
     border-radius: 0 0 10px 0;
     background-image: linear-gradient(to bottom, rgb(176, 142, 255), rgb(196, 196, 196));
+}
+
+.bottom-left-btn {
+    position: absolute;
+    width: 573px;
+    left: 231px;
+    top: 315px;
+    border-radius: 0px 0px 0px 30px;
+    opacity: 0.6;
+    background-color: #000;
+    color: white;
 }

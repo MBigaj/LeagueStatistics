@@ -1,3 +1,9 @@
+.main-page-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+}
+
 .champion-container {
     height: auto;
     width: 280px;

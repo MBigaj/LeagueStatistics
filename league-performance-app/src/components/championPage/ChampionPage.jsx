@@ -6,6 +6,8 @@ import './ChampionPage.css'
 import Pages from "../../Pages"
 import URLS from "../../urls"
 import ChampionBuildModal from "../modals/ChampionBuildModal"
+import NewGameModal from "../modals/NewGameModal"
+import { FaPlus } from "react-icons/fa6"
 
 const ChampionPage = ({ setCurrentPage }) => {
     const navigate = useNavigate()
@@ -18,6 +20,16 @@ const ChampionPage = ({ setCurrentPage }) => {
     const [games, setGames] = useState(null)
     const [builds, setBuilds] = useState(null)
 
+    const getGamesForChampion = () => {
+        axios.get(`${URLS.BACKEND_URL}games/get/${championId}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                },
+            }).then(response => {
+                setGames(response.data)
+            })
+    }
+
     useEffect(() => {
         axios.get(`${URLS.BACKEND_URL}champions/get-one/${championId}`, {
             headers: {
@@ -27,13 +39,7 @@ const ChampionPage = ({ setCurrentPage }) => {
                 setChampion(response.data[0])
             })
 
-        axios.get(`${URLS.BACKEND_URL}games/get/${championId}`, {
-            headers: {
-                'Content-Type': 'application/json',
-                },
-            }).then(response => {
-                setGames(response.data)
-            })
+        getGamesForChampion();
     }, [])
 
     useEffect(() => {
@@ -103,8 +109,9 @@ const ChampionPage = ({ setCurrentPage }) => {
                 <div className="d-flex justify-content-center row position-relative">
                     <div className="my-4 col-md-6 d-flex justify-content-start">
                         <img src={ champion.image_url } className="champion-image" onClick={ handleBackToHome } alt='hello' />
+                        <NewGameModal buttonText={ <FaPlus /> } buttonStyling={'new-game-button game-button bottom-left-btn'} champion={ champion } onClickCallback={getGamesForChampion} />
                         <div className="caption d-flex text-center justify-content-center w-auto">
-                            <p className="image-text">{ champion.name }</p>
+                            <div className="image-text">{ champion.name }</div>
                         </div>
                     </div>
                     <div className="mt-3 col-md-2 text-center">

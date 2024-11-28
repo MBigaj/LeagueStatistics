@@ -46,7 +46,7 @@ const NavBar = ({ championSearchString, setChampionSearchString, currentPage }) 
   }
 
   return (
-    <div className='d-flex justify-content-center navbar-tile'>
+    <div className='sticky-top d-flex justify-content-center navbar-tile'>
       { getNavbarButtons() }
     </div>
   )

@@ -44,7 +44,6 @@ const StatisticsPage = ({ setCurrentPage }) => {
 
   useEffect(() => {
     if (activeFilter && sortMethod) {
-      console.log(activeFilter)
       axios.get(`${URLS.BACKEND_URL}champions/get-statistics/`, {
         params: {
           filter: activeFilter,
@@ -55,7 +54,6 @@ const StatisticsPage = ({ setCurrentPage }) => {
             },
         }).then(response => {
             setFilteredChampions(response.data)
-            console.log(response.data)
         })
     }
   }, [activeFilter, sortMethod])

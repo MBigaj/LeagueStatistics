@@ -13,7 +13,6 @@ const MainPage = ({ champions, championSearchString, setCurrentPage }) => {
     }, [champions])
 
     useEffect(() => {
-        console.log(championSearchString)
         if (championSearchString) {
             const filteredChampions = champions.filter(champion => champion.name.toLowerCase().includes(championSearchString))
             setDisplayChampions(filteredChampions)
@@ -24,7 +23,7 @@ const MainPage = ({ champions, championSearchString, setCurrentPage }) => {
 
     return (
         <div className="container-fluid px-5">
-            <div className='d-flex flex-wrap img-fluid mx-auto my-auto w-75'>
+            <div className='img-fluid mx-auto my-auto w-100 px-5 main-page-container'>
                 { displayChampions && displayChampions.map(champion => {
                 return (
                     <div className='champion-container m-4 text-center' key={ champion.id }>

@@ -18,42 +18,60 @@ function ChampionBuildModal({ buttonText, buttonStyling, builds }) {
   const renderPlaceholder = (imageCount) => {
     return (
       <div>
-        <div className='d-flex'>
+        <div className='placeholder-wave d-flex'>
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
         </div>
         <hr></hr>
-        <div className='d-flex'>
+        <div className='placeholder-wave d-flex'>
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
         </div>
         <hr></hr>
-        <div className='d-flex'>
+        <div className='placeholder-wave d-flex'>
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
         </div>
         <hr></hr>
-        <div className='d-flex'>
-            <div src='...' class='card-img item-image placeholder item-image mx-2' />
-            <div src='...' class='card-img item-image placeholder item-image mx-2' />
-            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        <div className='placeholder-wave d-flex'>
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
         </div>
         <hr></hr>
-        <div className='d-flex'>
+        <div className='placeholder-wave d-flex'>
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
         </div>
         <hr></hr>
-        <div className='d-flex'>
+        <div className='placeholder-wave d-flex'>
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
         </div>
         <hr></hr>
-        <div className='d-flex'>
+        <div className='placeholder-wave d-flex'>
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        </div>
+        <hr></hr>
+        <div className='placeholder-wave d-flex'>
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        </div>
+        <hr></hr>
+        <div className='placeholder-wave d-flex'>
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+            <div src='...' class='card-img item-image placeholder item-image mx-2' />
+        </div>
+        <hr></hr>
+        <div className='placeholder-wave d-flex'>
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
             <div src='...' class='card-img item-image placeholder item-image mx-2' />
@@ -73,7 +91,6 @@ function ChampionBuildModal({ buttonText, buttonStyling, builds }) {
             return ( <div>
                 <div className='d-flex'>
                     { build.map(item => {
-                        console.log(build)
                         return (
                             <img className='item-image mx-2' src={ item.src } />
                         )
